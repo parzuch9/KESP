@@ -37,8 +37,9 @@ for i in range(1,exponent+1):
     plt.axis([0,1,0, 1.0])
     numericalplot = plt.plot(x, solution, 'r:.', linewidth = 2.0, label = 'Numerical')
     exactplot = plt.plot(x, exact, 'm:v', linewidth = 2.0, label = 'Exact')
-    plt.xlabel(r'$x$')
-    plt.ylabel(r'Solutions')
+    plt.xlabel(r'$x$',fontsize=16)
+    plt.ylabel(r'Solutions',fontsize=16)
+    plt.legend()
     plt.savefig(figfile)
 #   Then clean up
     plt.clf()
@@ -96,7 +97,7 @@ references = r"""\begin{thebibliography}{99}
 
 # Dump to file:
 filename = 'ReportProject1'
-f = file(filename + '.tex', "w")
+f = open(filename + '.tex', "w")
 f.write(preamb)
 f.write(introduction)
 f.write(theory)
