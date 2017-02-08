@@ -35,8 +35,31 @@ and a closed form solution with the Dirichlet boundary conditions:
 	u(x)=1-(1-e^{-10})x-e^{-10x}
 	\end{equation}
 
-	\subsection{Solving a Tridiagonal Matrix}	
-We can write a simple program that uses forward and backward substitutions to solve the set of linear equations.
+	\subsection{Solving a Tridiagonal Matrix}
+This is general tridiagonal matrix:
+	\begin{center}
+		$\begin{bmatrix}
+			d_{1}& e_{1} & 0 & 0 \\
+			e_{1} & d_{2} & e_{2} & 0 & \\
+			0 & e_{2} & d_{3} & e_{i-1}   \\
+			0 & 0 & e_{i-1} & d_{i} 
+	
+		\end{bmatrix}
+		 \begin{bmatrix}
+			u_{1} \\
+			u_{2} \\
+			u_{3} \\
+			u_{i} 
+		\end{bmatrix} =
+		\begin{bmatrix}
+			v_{1} \\
+			v_{2} \\
+			v_{3} \\
+			v_{i}
+		\end{bmatrix}$
+		\end{center}
+
+We can reduce this generalized matrix into an upper trianular matrix from forward and backward substitution. 
 	
 	\begin{equation}
 	\tilde{f}_{i}=f_{i}-\frac{\tilde{f}_{i-1}e_{i-1}}{\tilde{d}_{i-1}} ; \tilde{d}_{i}=d_{i}-e^{2}_{i-1}/\tilde{d}_{i-1}
@@ -48,6 +71,28 @@ We can write a simple program that uses forward and backward substitutions to so
 	\label{backward}
 	\end{equation}
 where $d_{i}$ are the diagonal matrix elements and $e_{i}$ are the off diagonal matrix elements.
+
+\begin{center}
+		$\begin{bmatrix}
+			d_{1}& e_{1} & 0 & 0 \\
+			0 & \tilde{d}_{2} & e_{2} & 0 & \\
+			0 & 0 & \tilde{d}_{3} & e_{i-1}   \\
+			0 & 0 & 0 & \tilde{d}_{i} 
+	
+		\end{bmatrix}
+		 \begin{bmatrix}
+			u_{1} \\
+			u_{2} \\
+			u_{3} \\
+			u_{i} 
+		\end{bmatrix} =
+		\begin{bmatrix}
+			v_{1} \\
+			v_{2} \\
+			v_{3} \\
+			v_{i}
+		\end{bmatrix}$
+		\end{center}
 	
 
 
