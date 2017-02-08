@@ -16,7 +16,7 @@ We present our Ferrari algorithm for solving linear equations. We wrote the one-
 \section{Introduction}
 As an introduction to the central ideas of the class, we studied the one-dimensional Poisson equation with Dirichlet boundary conditions. Namely, transforming the differential equation into a set of linear equations, and consequently, a matrix. We implemented a general algorithm, a specialized algorithm, and a LU-decomposition algorithm. In the course of this report, we introduce the theoretical model and the different algorithms  we developed, then discuss the results of the different methods. Important points of comparison lie with relative error and relative speed of the calculation due to FLOPS. 
 
-\section{Theory, algorithms and methods}
+\section{Theory}
 	\subsection{Theoretical solution of the one dimensional Poisson equation}	
 In general, The one dimensional Poisson equation reads as follows: \begin{equation} -u^{''}(x) = f(x)     \end{equation}  Through discretized approximation of {\it u}, we can solve for {\it f} using a set of linear equations: \begin{equation}
 	f(x)=-\frac{v_{i+1}+u_{i-1}-2u_{i}}{h^{2}}      ;      i=1,...,n
@@ -34,6 +34,8 @@ and a closed form solution with the Dirichlet boundary conditions:
 	\begin{equation}
 	u(x)=1-(1-e^{-10})x-e^{-10x}
 	\end{equation}
+
+	\subsection{Solving a Tridiagonal Matrix}	
 We can write a simple program that uses forward (\ref{forward}) and backward (\ref{backward}) substitutions to solve the set of linear equations.
 	
 	\begin{equation}
@@ -58,18 +60,71 @@ We were able to create another program that performed matrix mathematics to solv
 			\label{ludecomp}
 			\caption{The code to find the inverse of a matrix utilizing LU decomposition}
 		\end{figure}
-	
 
+\section{Algorithms}	
+
+\section{Methods}
 	\subsection{Relative error}
-In order to properly test the effectiveness of our algorithm, we are measuring the relative closeness, or relative error of our analytic solution:
+In order to properly test the effectiveness of our algorithm, we are measuring the closeness, or relative error of our analytic solution:
 	\begin{equation}
 	\epsilon_{i} = log_{10}(|\frac{v_{i}-u_{i}}{u_{i}}|)  ; i = 1,...,n
 	\label{error}
 	\end{equation}
-{\it u}\textsubscript{i} is the analytic solution, and {\it v}\textsubscript{i}
+{\it u}\textsubscript{i} is the analytic solution, and {\it v}\textsubscript{i} is the numerical solution.
 
 \section{Results and discussions}
 
+  By running the program for different step sizes with x in a range [0,1], we can see how the data changes with data points (Figure 2\ref{uvx}).    We can see from the plot, that without enough data points we cannot produce the full curve, but with too many data points we recieve a larger error.  This provides us with the knowledge that there is a saddle point in the step size where we optimize both uncertainty and completeness, in our case it appears to be the N=100 or N=$10^{2}$ step size.
+
+\begin{figure}[!ht]
+	\centering
+	%\includegraphics[width=0.5\textwidth]{/Users/ericaboud/Pictures/uvx.jpg}
+	\label{uvx}
+	\caption{Comparison between different step sizes.  The x axis are the x values in the range [0,1] and the y axis are the resulting u values.}
+\end{figure}
+
+We can further optimize our program by solving it for a special case, in which the diagonal matrix elements are equal to 2 and the off diagonal matrix elements are equal to -1.  This allows us to reduce the number of floating point operations per second (FLOPS) from an original 9 down to 4.  This allows us to run our program much faster by precalculating coefficients.
+
+
+
+
+\begin{center}
+	\begin{tabular}{cc}
+		\hline \hline
+			Step Size ($n$) &  Average Relative Error ($|\epsilon|$)\\
+			\hline
+			1 & 1.101\\
+			2 & 3.079\\
+			3 & 5.079\\
+			4 & 7.079\\
+			5 & 9.079\\
+			6 & 11.50\\
+			7 & 12.27\\
+			\hline
+			\label{errortable}
+	\end{tabular}
+\end{center}
+	
+	By including equation \ref{error} in our code, we can calculate the relative error for a certain step size.  The was done for multiple step sizes, $N=10^{n}$ n=1,...,7 (Table above).    It should be noted that these are the absolute values and averages of the errors.  It should also be noted that it breaks down for n=7, as there is a large fluctuation in the error between 10 and infinity.  It appears that n=6 is the largest order of step sizes that we can accurately use to describe the solutions to the function.
+	
+	We may also include a timer to calculate the time required to compute the solutions.  By adding a timing mechanism, we calculated the time required to solve square matrices with various column lengths.
+	
+	\begin{center}
+		\begin{tabular}{cc}
+			\hline \hline
+			Column Size & Approximate Time (s)\\
+			\hline
+			10\textsuperscript{1} & 0.00127\\
+			10\textsuperscript{2} & 0.09897\\
+			10\textsuperscript{3} & 30\\
+			10\textsuperscript{4} & \\
+			10\textsuperscript{5} & \\
+			\hline
+			\label{timingtable}
+		\end{tabular}
+	\end{center}
+	
+	
 \begin{figure}[hbtp]
 
 \caption{Exact and numerial solutions for $n=10$ mesh points.} 
