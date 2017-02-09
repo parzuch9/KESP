@@ -109,6 +109,10 @@ We were able to create another program that performed matrix mathematics to solv
 \section{Algorithms}	
 
 \section{Methods}
+
+
+\section{Results and discussions}
+
 	\subsection{Relative error}
 In order to properly test the effectiveness of our algorithm, we are measuring the closeness, or relative error of our analytic solution:
 	\begin{equation}
@@ -116,8 +120,6 @@ In order to properly test the effectiveness of our algorithm, we are measuring t
 	\label{error}
 	\end{equation}
 $u_{i}$ is the analytic solution, and $v_{i}$ is the numerical solution.
-
-\section{Results and discussions}
 
  We ran the program with the step sizes of n = 1, 2 , and 3, corresponding to a 10x10, 100x100, and 1000x1000 matrix. We also optimized our program through specialization. Diagonal matrix elements were set to 2 and off-diagonal elements were set to -1. FLOPS were reduced from 9 in the general case to 4 in the specialized case. The program was much more efficient, and faster as a consequence to the precalculation. 
 
