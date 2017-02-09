@@ -4,6 +4,16 @@
 \usepackage{bm}
 \usepackage[colorlinks=true,urlcolor=blue,citecolor=blue]{hyperref}
 \usepackage{color}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{hyperref}
+
+\makeatletter
+\newcommand\urlfootnote@[1]{\footnote{\url@{#1}}}
+\DeclareRobustCommand{\urlfootnote}{\hyper@normalise\urlfootnote@}
+\makeatother
+
 \begin{document}
 \title{Project 1}
 \author{Parker Brue}
@@ -109,6 +119,37 @@ We were able to create another program that performed matrix mathematics to solv
 \section{Algorithms}	
 
 \section{Methods}
+For a complete understanding of the methods implemented in this project, reference our GIT repository.\urlfootnote{https:///github.com/healthycheekums/KESP/tree/master/project1}
+
+        \subsection{Implementing a Specialized Algorithm}
+This algorithm solves the specialized tridiagonal matrix found when solving the poisson equation.
+\begin{algorithm}
+\caption{Specialized Algorithm}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{}{}
+\For {$i = 2; i < N$} 
+\State f[i] += f[i-1]/d[i-1]
+\EndFor
+\State u[N-1] = f[N-1]/d[N-1]
+\For {$i = N-2; i > 0$}
+\State u[i] = (f[i]+u[i+1])/d[i]
+\EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+        \subsection{Implementing an LU decomposition Algorithm}
+This algorithm uses the armadillo library to perform LU decomposition.
+\begin{algorithm}
+\caption{LU decomposition}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{}{}
+\State arma::lu(L,U,A)
+\State y = solve(L,b)
+\State solution = solve(U,y)
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
 
 
 \section{Results and discussions}
