@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.28)  8 FEB 2017 22:55
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.28)  8 FEB 2017 23:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -561,47 +561,59 @@ l.122 ...ealthycheekums/KESP/tree/master/project1}
                                                   
 ? 
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 128.
+put line 127.
 ! Missing \endcsname inserted.
 <to be read again> 
                    \c@float@type 
-l.140 \end{algorithm}
+l.139 \end{algorithm}
                      
 ? 
 ! Missing number, treated as zero.
 <to be read again> 
                    \endcsname 
-l.140 \end{algorithm}
+l.139 \end{algorithm}
                      
 ? 
 ! Extra \endcsname.
 <recently read> \endcsname 
                            
-l.140 \end{algorithm}
+l.139 \end{algorithm}
+                     
+? 
+! You can't use `\vadjust' in vertical mode.
+<argument> \vadjust 
+                    {\do@output@cclv {\@add@float }}\@Esphack 
+l.139 \end{algorithm}
                      
 ? 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 ! Missing \endcsname inserted.
 <to be read again> 
                    \c@float@type 
-l.153 \end{algorithm}
+l.152 \end{algorithm}
                      
 ? 
 ! Missing number, treated as zero.
 <to be read again> 
                    \endcsname 
-l.153 \end{algorithm}
+l.152 \end{algorithm}
                      
 ? 
 ! Extra \endcsname.
 <recently read> \endcsname 
                            
-l.153 \end{algorithm}
+l.152 \end{algorithm}
+                     
+? 
+! You can't use `\vadjust' in vertical mode.
+<argument> \vadjust 
+                    {\do@output@cclv {\@add@float }}\@Esphack 
+l.152 \end{algorithm}
                      
 ? 
 
 LaTeX Warning: File `/home/healthycheekums/Physics480/project1/Report/out1.pdf'
- not found on input line 174.
+ not found on input line 173.
 
 
 ! Package pdftex.def Error: File `/home/healthycheekums/Physics480/project1/Rep
@@ -611,17 +623,17 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.174 ...kums/Physics480/project1/Report/out1.pdf}
+l.173 ...kums/Physics480/project1/Report/out1.pdf}
                                                   
 ? 
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 174--176
+Overfull \hbox (9.0pt too wide) in paragraph at lines 173--175
  [][] 
  []
 
 
 LaTeX Warning: File `/home/healthycheekums/Physics480/project1/Report/out2.pdf'
- not found on input line 182.
+ not found on input line 181.
 
 
 ! Package pdftex.def Error: File `/home/healthycheekums/Physics480/project1/Rep
@@ -631,17 +643,17 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.182 ...kums/Physics480/project1/Report/out2.pdf}
+l.181 ...kums/Physics480/project1/Report/out2.pdf}
                                                   
 ? 
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 182--183
+Overfull \hbox (9.0pt too wide) in paragraph at lines 181--182
  [][] 
  []
 
 
 LaTeX Warning: File `/home/healthycheekums/Physics480/project1/Report/out3.pdf'
- not found on input line 191.
+ not found on input line 190.
 
 
 ! Package pdftex.def Error: File `/home/healthycheekums/Physics480/project1/Rep
@@ -651,11 +663,11 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.191 ...kums/Physics480/project1/Report/out3.pdf}
+l.190 ...kums/Physics480/project1/Report/out3.pdf}
                                                   
 ? 
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 191--192
+Overfull \hbox (9.0pt too wide) in paragraph at lines 190--191
  [][] 
  []
 
@@ -664,21 +676,21 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.214 \end{center}
+l.213 \end{center}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{figure.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.214 \end{center}
+l.213 \end{center}
                   ]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 214.
+ on input line 213.
 
 No file ReportProject1.bbl.
 
-Underfull \hbox (badness 1033) in paragraph at lines 242--243
+Underfull \hbox (badness 1033) in paragraph at lines 241--242
  []\OT1/cmr/m/n/9 G. A. Miller, A. K. Op-per, and E. J. Stephen-son,
  []
 
@@ -690,12 +702,12 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.245 \end{document}
+l.244 \end{document}
                     ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 245.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 244.
  (./ReportProject1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 245.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 245.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 244.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 244.
 Package rerunfilecheck Info: File `ReportProject1.out' has not changed.
 (rerunfilecheck)             Checksum: 6ED084D461F9323191FAB09635A1F999;994.
 
@@ -729,7 +741,7 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmtt9.pfb>
-Output written on ReportProject1.pdf (3 pages, 208291 bytes).
+Output written on ReportProject1.pdf (3 pages, 208454 bytes).
 PDF statistics:
  179 PDF objects out of 1000 (max. 8388607)
  152 compressed objects within 2 object streams
